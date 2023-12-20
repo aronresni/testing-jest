@@ -6,8 +6,15 @@ describe('La funcion sumar', () => {
         expect(typeof sumar).not.toBe("number")
     })
     it('Debe arrojar un error en caso de recibir algo que no sea un numero', () => {
-        expect(sumar("holis", "tukis")),toThrow("Los parametros deben ser numeros")
+        expect(() => sumar("holis", "tukis")).toThrow(
+            "Los parametros deben ser numeros"
+        )
     });
 
-    
+    it("Debe devolver el resultado de la suma correctamente", () => {
+        expect(sumar(4, 5)).toBe(9);
+
+    })
+
+
 });
